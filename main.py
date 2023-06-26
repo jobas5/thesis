@@ -1,21 +1,3 @@
-"""
-PyTorch implimentation of SuperTML.
-
-Acknowledgement - References:
-    •   Baohua Sun. 
-        "SuperTML: Two-Dimensional Word Embedding and Transfer Learning Using 
-        ImageNet Pretrained CNN Models for the Classifications on Tabular Data".
-        CVPR Workshop Paper, 2019
-
--------------------------
-B R A I N C R E A T O R S
--------------------------
-
-Reposetory Author:
-    Ioannis Gatopoulos, 2020
-"""
-
-
 from datetime import datetime
 import torch
 from torch.utils.tensorboard import SummaryWriter
