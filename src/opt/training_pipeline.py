@@ -31,6 +31,8 @@ def train_step(model, criterion, optimizer, train_loader):
         # forward pass
         x_imgs, labels = x_imgs.to(args.device), labels.to(args.device)
         probs = model(x_imgs)
+        probs = probs.to(torch.long)
+        labels = labels.to(torch.long)
         loss = criterion(probs, labels)
         # back-prop
         loss.backward()
