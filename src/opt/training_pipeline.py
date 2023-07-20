@@ -15,7 +15,7 @@ def valid_step(model, criterion, val_loader):
         # forward pass
         x_imgs, labels = x_imgs.to(args.device), labels.to(args.device)
         outputs = model(x_imgs)
-        loss = criterion(outputs, labels)
+        loss = criterion(outputs, labels.long())
         # gather statistics
         avg_loss += loss.item()
         _, preds = torch.max(outputs, 1)
@@ -31,7 +31,7 @@ def train_step(model, criterion, optimizer, train_loader):
         # forward pass
         x_imgs, labels = x_imgs.to(args.device), labels.to(args.device)
         probs = model(x_imgs)
-        probs = probs.to(torch.long)
+        probs = probs.to(torch.float)
         labels = labels.to(torch.long)
         loss = criterion(probs, labels)
         # back-prop
